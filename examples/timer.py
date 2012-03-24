@@ -70,9 +70,9 @@ class Timer(object):
             if m >= 2:
                 self.label.color = (255, 255, 255, 255)
             if m >= 3:
-                self.label.color = (180, 0, 0, 255)
-            if m >= 4:
                 self.label.color = (180, 110, 50, 255)
+            if m >= 5:
+                self.label.color = (180, 0, 0, 255)
 
 
 @window.event
