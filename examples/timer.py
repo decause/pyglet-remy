@@ -68,11 +68,11 @@ class Timer(object):
             m, s = divmod(self.time, 60)
             self.label.text = '%02d:%02d' % (m, s)
             if m >= 2:
-                self.label.color = (255, 255, 255, 255)
+                self.label.color = (255, 255, 255, 255)  # white
             if m >= 3:
-                self.label.color = (180, 110, 50, 255)
+                self.label.color = (180, 110, 50, 255)  # orange
             if m >= 5:
-                self.label.color = (180, 0, 0, 255)
+                self.label.color = (180, 0, 0, 255)  # Red
 
 
 @window.event
@@ -81,12 +81,11 @@ def on_key_press(symbol, modifiers):
         if timer.running:
             timer.running = False
         else:
-            if timer.time > 0:
-                timer.reset()
-            else:
-                timer.running = True
+            timer.running = True
     elif symbol == pyglet.window.key.ESCAPE:
         window.close()
+    elif symbol == pyglet.window.key.R:
+        timer.reset()
 
 
 @window.event
